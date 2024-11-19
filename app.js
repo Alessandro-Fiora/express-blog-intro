@@ -52,13 +52,23 @@ app.get("/", (req, res) => {
 // Rotta Bacheca
 app.get("/bacheca", (req, res) => {
   console.log("dashboard request received");
-  let filteredPosts = posts;
-  const term = req.query.term ?? "";
-  console.log(term);
 
+  // FILTRO POST PER KEYWORD NEI TAGS
+  let filteredPosts = posts;
+
+  // SE C'E' UNA KEY DO A TERM IL VALORE DELLA KEY, ALTRIMENTI DO VALORE NULLO
+  const term = req.query.term ?? "";
+
+  // SE TERM HA UN VALORE FILTRO I POST PER QUELLI CHE INCLUDONO IL VALORE TRA I TAG
   if (term) {
     filteredPosts = posts.filter((post) => {
-      return post.tags.includes(term);
+      let isTermIncluded = false;
+      // PER OGNI POST CONTROLLO SE OGNI TAG CONTIENE TERM
+      post.tags.forEach((tag) => {
+        if (tag.toLowerCase().includes(term.toLowerCase()))
+          isTermIncluded = true;
+      });
+      return isTermIncluded;
     });
   }
 
