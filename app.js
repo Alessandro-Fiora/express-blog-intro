@@ -7,35 +7,35 @@ const posts = [
   {
     title: "Ciambellone",
     content: "lorem ipsum sit amet",
-    img: "./public/images/ciambellone.jpeg",
+    img: "/images/ciambellone.jpeg",
     tags: ["ricetta", "ciambellone"],
   },
 
   {
     title: "Crackers alla barbabietola",
     content: "lorem ipsum sit amet",
-    img: "./public/images/cracker_barbabietola.jpeg",
+    img: "/images/cracker_barbabietola.jpeg",
     tags: ["ricetta", "cracker", "barbabietola"],
   },
 
   {
     title: "Pane fritto dolce",
     content: "lorem ipsum sit amet",
-    img: "./public/images/pane_fritto_dolce.jpeg",
+    img: "/images/pane_fritto_dolce.jpeg",
     tags: ["ricetta", "pane", "fritto", "dolce"],
   },
 
   {
     title: "Pasta alla barbabietola",
     content: "lorem ipsum sit amet",
-    img: "./public/images/pasta_barbabietola.jpeg",
+    img: "/images/pasta_barbabietola.jpeg",
     tags: ["ricetta", "pasta", "alla", "barbabietola"],
   },
 
   {
     title: "Torta paesana",
     content: "lorem ipsum sit amet",
-    img: "./public/images/torta_paesana.jpeg",
+    img: "/images/torta_paesana.jpeg",
     tags: ["ricetta", "torta", "paesana"],
   },
 ];
