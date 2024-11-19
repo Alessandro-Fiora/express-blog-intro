@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+// Lista dei post
 const posts = [
   {
     title: "Ciambellone",
@@ -39,11 +40,16 @@ const posts = [
   },
 ];
 
+// Asset statici
+app.use(express.static("public"));
+
+// Rotta Homepage
 app.get("/", (req, res) => {
   console.log("homepage request received");
   res.send("Server del mio Blog");
 });
 
+// Rotta Bacheca
 app.get("/bacheca", (req, res) => {
   console.log("dashboard request received");
   res.json({
