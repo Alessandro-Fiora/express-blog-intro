@@ -52,10 +52,17 @@ app.get("/", (req, res) => {
 // Rotta Bacheca
 app.get("/bacheca", (req, res) => {
   console.log("dashboard request received");
-  res.json({
-    posts,
-    postNumber: posts.length,
-  });
+  let filteredPosts = posts;
+  const term = req.query.term ?? "";
+  console.log(term);
+
+  if (term) {
+    filteredPosts = posts.filter((post) => {
+      return post.tags.includes(term);
+    });
+  }
+
+  res.json({ filteredPosts, postNumber: filteredPosts.length });
 });
 
 app.listen(port, () => {
