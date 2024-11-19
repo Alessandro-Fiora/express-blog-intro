@@ -40,9 +40,18 @@ const posts = [
 ];
 
 app.get("/", (req, res) => {
-  console.log("request recieved");
+  console.log("homepage request received");
   res.send("Server del mio Blog");
 });
+
+app.get("/bacheca", (req, res) => {
+  console.log("dashboard request received");
+  res.json({
+    posts,
+    postNumber: posts.length,
+  });
+});
+
 app.listen(port, () => {
   console.log("server listening on port", port);
 });
